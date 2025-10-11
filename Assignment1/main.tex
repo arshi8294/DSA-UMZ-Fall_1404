@@ -1,0 +1,228 @@
+
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Path=font/,Extension=.ttf,BoldFont=B Zar Bold]{B Zar}
+\setlatintextfont[Scale=0.833]{Times New Roman}
+
+
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    تمرین اول ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    الگوریتم‌ها و حل مسئله - پیچیدگی زمانی - الگوریتم های بازگشتی
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+\today
+
+\end{center}
+
+
+\end{titlepage}
+
+\begin{questions}
+
+
+\question
+توابع زیر را از نظر رشد با هم مقایسه کنید\\
+\begin{flushleft}
+    \(g(n) = n^{\log n}\)\\
+    \(f(n) = (log n)^n (n)\)
+\end{flushleft}
+
+
+
+
+
+\question % نمره سوال در کروشه
+کدام یک از گزاره های زیر درباره‌ی توابع ذکر شده صحیح است؟\\
+    \begin{flushleft}
+       \(f(n)=4^{\log n}\)\\ \(g(n)=(\log n)^{\log n}\)\\ \(h(n) = \log^2 n\)
+    \end{flushleft}
+
+\begin{checkboxes} 
+    \choice \(f(n) = O(g(n), g(n) = \Omega(h(n)))\)
+    \choice \(g(n) = \Omega(h(n), h(n) = \Omega(f(n)))\)
+    \choice \(f(n) = O(h(n), g(n) = \Omega(f(n)))\)
+    \choice \(h(n) = O(g(n), f(n) = \Theta(g(n)))\)
+\end{checkboxes}
+
+
+\question
+کد زیر الگوریتم جستجوی خطی را نشان می دهد\\
+فرض کنید با احتمال 50 درصد عنصر \lr{target} در آرایه‌ی \lr{arr} است. بطور متوسط چند عنصر برای یافتن \lr{target} بررسی می‌شوند؟\\
+\lr{\lstinputlisting[language=Python]{code/linearSearch.py}}
+
+
+\question
+آیا می‌توان ادعا کرد که برای هر دو تابع \(f(n)\) و \(g(n)\) یا \(f(n) = O(g(n))\) یا \(g(n) = O(f(n))\) یا هر دو؟\\
+
+
+\question
+توابع زیر را از نظر نرخ رشد به ترتیب صعودی مرتب کنید.\\
+\begin{flushleft}
+    \(f_1(n) = n^{1.01}\), \(f_2(n) = 2^{\sqrt{n}}\), \(f_3(n) = (\log{n})^{\log{n}}\), \(f_4(n) = n^{\log{n}}\), \(f_5(n) = n^{\log{\log{n}}}\)
+    
+\end{flushleft}
+
+
+\question
+در یک زمستان سرد، خرس قطبی\lr{n} قطعه گوشت دقیقا به اندازه‌های 1، 2 تا \lr{n} را در غاری ذخیره کرده است.
+او هر روز یکی از این قطعه گوشت ها را به صورت تصادفی انتخاب می‌کند. اگر اندازه‌ی گوشت عدد فردی بود، آن را کاملا می‌خورد.
+ اگر زوج بود، آن را دقیقا نصف می‌کند، یک نصف آن را می‌خورد و نصف دیگر را مجددا در غار قرار می‌دهد.
+  اگر گوشتی موجود نباشد خرس می‌میرد. با این الگوریتم، برای 
+  \lr{n}های خیلی بزرگ روزهای باقیمانده از عمر خرس ما تابع کدام یک از گزینه های خواهد بود؟\\
+
+\begin{oneparcheckboxes}
+    \choice \(O(n)\)
+    \choice \(O(\log n)\)
+    \choice \(O(n \log n)\)
+    \choice \(O(n^2)\)
+
+\end{oneparcheckboxes}
+
+\end{questions}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
