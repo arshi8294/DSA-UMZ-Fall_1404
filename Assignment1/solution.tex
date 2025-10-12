@@ -98,7 +98,7 @@
 \HRule \\[0.4cm]
 \textbf{\Huge
 %------------------------------------------------------------------------------------
-    تمرین اول ساختمان داده‌ها و الگوریتم
+    پاسخ تمرین اول ساختمان داده‌ها و الگوریتم
 %------------------------------------------------------------------------------------
 }\\
 \vspace*{0.5\baselineskip} 
@@ -148,3 +148,72 @@
 
 
 \end{titlepage}
+
+\begin{questions}
+
+\question
+یادآوری: اگر \(f(n)\) و \(g(n)\) توابعی صعودی باشند و \(\log(f(n))\) از \(\log(g(n))\) رشد بیشتری داشته باشد، آنگاه \(f(n)\) از \(g(n)\) رشد بیشتری دارد.\\
+البته در صورتی که رشد لگاریتم توابع از مرتبه‌ی یکسانی شود، نمی‌توان درباره هم مرتبه بودن توابع اظهار نظر کرد.\\
+\begin{flushleft}
+    \(\log(g(n)) = \log(n^{\log n}) = \log^2 n\) \\ \vspace*{0.5\baselineskip}
+    \(\log(f(n)) = \log(\log^n n) = n\log(\log(n))\)\\ \vspace*{0.5\baselineskip}
+    \(\lim_{n \to \infty} \frac{\log(f(n))}{\log(g(n))} = \lim_{n \to \infty} \frac{n\log(\log(n))}{\log^2(n)}\)\\ \vspace*{0.5\baselineskip}
+    \(\log n = m, n = 2^{m}\)\\ \vspace*{0.5\baselineskip} 
+    \(\lim_{n \to \infty} \frac{2^{m}\log(m)}{m^2} = \infty \Rightarrow g(n) = O(f(n))\)
+\end{flushleft}
+
+\question
+مانند سوال قبل رفتار می کنیم.\\
+\begin{flushleft}
+    
+\(\log{f(n)} = \log{n}.\log{4} = 2\log n = \Theta(\log n)\)\\
+\(\log{g(n)} = \log^2(n) = \Theta(\log^2 n)\)\\
+\(\log{h(n)} = 2\log(\log(n)) = \Theta(\log(\log(n)))\) \\
+\(\Rightarrow h(n) \leq f(n) \leq g(n)\)
+
+\end{flushleft}
+
+
+\question
+عمل جستجوی خطی اگر \lr{target} در \lr{arr[1]} باشد. بهترین حالت است و تعداد مقایسه ها \(O(1)\) است. اگر \lr{target} در \lr{arr[n]} باشد،
+یا اصلا نباشد، بدترین حالت است و \lr{n} مقایسه انجام می‌شود.\\
+بررسی حالت متوسط معمولا دشوار است زیرا باید با در نظر گرفتن تمام حالات ممکن میانگین گرفت.\\
+اگر \lr{target} با احتمال \lr{p} در \lr{arr} باشد در نتیجه با احتمال \lr{(1-p)} در آن وجود ندارد. در این صورت داریم:\\
+\begin{flushleft}
+    \(\frac{p}{n}(\sum_{i=1}^{n} i) + (1-p)n = \frac{p(n+1)}{2} + (1-p)n\)
+\end{flushleft}
+که با \(p=0.5\) می‌شود: \(\frac{3n+1}{4}\)
+
+
+
+\question
+خیر فرض کنید \(f(n) = n\) و \(g(n) = n^{1+\sin{n}}\). این مثال درستی نتایج ذکر شده را نقض می‌کند.
+
+\question
+یادآوری: \\
+\begin{flushleft}
+    \(a^b = e^{b.\ln{a}}\)\\
+\end{flushleft}
+طبق نکته‌ی بالا خواهیم داشت:\\
+\begin{flushleft}
+    \(f_3(n) = f_5(n) = e^{\log{n}.\log{\log{n}}}\)
+\end{flushleft}
+حال توابع را بصورت لگاریتمی با هم مقایسه می‌کنیم:
+\begin{flushleft}
+    \(\ln f_1 \sim 1.01 \ln{n}\)\\
+    \(\ln f_2 \sim (\sqrt{n}).\ln{2}\)\\
+    \(\ln f_4 \sim (ln{n})^2\)\\
+    \(\ln f_3 = \ln f_5 \sim \ln{n}.\ln{\ln{n}}\)\\
+
+\end{flushleft}
+
+با مقایسه لگاریتم توابع، ترتیب صعودی توابع از کوچک به بزرگ خواهد شد:\\
+\begin{flushleft}
+    \(f_1 < f_3 \equiv f_5 < f_4 < f_2\)
+\end{flushleft}
+
+
+
+\end{questions}
+
+\end{document}
