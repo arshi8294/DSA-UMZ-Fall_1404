@@ -212,6 +212,98 @@
     \(f_1 < f_3 \equiv f_5 < f_4 < f_2\)
 \end{flushleft}
 
+\newpage
+
+
+\question
+گزینه‌ی 1\\
+تعداد \lr{n} قطعه گوشت خرس را \lr{n} روز زنده نگه می‌دارد.\\
+\(\frac{n}{2}\) از این قطعات زوج است که این قطعات مجددا ذخیره می‌شوند که در نتیجه خرس را \(\frac{n}{2}\) روز دیگر زنده نگه می‌دارد.\\
+سپس \(\frac{n}{4}\) دیگر از قطعات زوج است و باقی می‌ماند در نتیجه خرس \(\frac{n}{4}\) روز دیگر نیز زنده می‌ماند.
+به همین ترتیب باقی روزهای عمر خرس برابر است با:\\
+\begin{flushleft}
+    \(n + \frac{n}{2} + \frac{n}{4} + \frac{n}{8} + \frac{n}{16} = n(\sum_{i=0}^{\infty}) = n*\frac{1}{1-\frac{1}{2}} = 2n\)
+    
+\end{flushleft}
+
+
+\question
+\begin{enumerate}
+    \item حل با استفاده از قضیه اصلی:\\
+    \begin{flushleft}
+            
+            \(a=4, b=2, f(n)=\log^2{n!} = \Theta(n^{2}\log^{2}n)\)\\ \vspace*{0.5\baselineskip}
+            \(n^{\log_{b} a} = n^2\)\\ \vspace*{0.5\baselineskip}
+            \(f(n) = \Theta(n^{\log_{b} a}.\log^k{n}) \Rightarrow T(n) = \Theta(n^{\log_{b} a}.\log^{k+1}{n})\)\\ \vspace*{0.5\baselineskip}
+            \(\Rightarrow T(n) = \Theta(n^{2}.\log^{3}{n})\)
+    \end{flushleft}
+
+    \item حل با قضیه‌ی اصلی + تغییر متغیر:
+    \begin{flushleft}
+        \(h(n) = \frac{T(n)}{n} = \frac{3T(\sqrt[3]{n})}{\sqrt[3]{n}} + \log n = 3h(\sqrt[3]{n}) + \log n\)\\ \vspace*{0.5\baselineskip}
+        \(m=\log n, n=2^m\)\\ \vspace*{0.5\baselineskip}
+        \(\Rightarrow F(m) = 3(\frac{m}{3}) + m \Rightarrow F(m) = \Theta(m.\log m)\)\\ \vspace*{0.5\baselineskip}
+        \(h(n) = \Theta(\log n.\log{\log{n}}) \Rightarrow T(n) = \Theta(n.\log n \log{\log n})\)
+
+    \end{flushleft}
+
+    \item حل به روش درخت بازگشتی:\\
+    ضریب های تقسیم باعث می‌شوند اندازه زیر مسائل به سرعت کوچک شوند عمق درخت بازگشتی تقریبا \(\Theta(\log n)\) اما در هر سطح مقدار تابع \(f\) بسیار کوچکتر از \(f(n)\) است.\\
+    بنابراین سهم مجموع همه درخت ها از هزینه ریشه بسیار ناچیز است و هزینه کل با همان مرتبه‌ی\(f(n)\) هم ارز است.\\
+    \begin{flushleft}
+        \(T(n) = \Theta(n^{\sqrt{\log n}})\)
+    \end{flushleft}
+
+    \item اثبات:\\
+    \begin{flushleft}
+        \(\log{n!} = \sum_{i=1}^{n}\log{i}\)\\ \vspace*{0.5\baselineskip}
+        \(\sum_{i=1}^{n}\log{i} \leq \sum_{i=1}^{n}\log{n} = n\log n\)\\ \vspace*{0.5\baselineskip}
+        \(\sum_{i=1}^{n}\log{i} \geq \sum_{i=\frac{n}{2}}^{n}\log{i} \geq \sum_{i=\frac{n}{2}}^{n}\log{\frac{n}{2}} = \frac{n}{2}.\log{\frac{n}{2}}\)\\ \vspace*{0.5\baselineskip}
+        \(\Rightarrow \log{n!} = \Theta(n\log n)\)
+        
+    \end{flushleft}
+\end{enumerate}
+
+
+
+\question
+گزینه‌ی 3\\
+تابع مورد نظر \(\binom{n}{m}\) بار عدد 1 را با هم جمع می‌زند و عملگر جمع \(n+1\) بار اجرا می‌شود.
+
+
+
+\question
+
+\begin{enumerate}
+    \item برای تقسیم های ثابت مثل نسبت 1 به 3 یا 1 به 4، بازگشت \(T(n) = T(b_1n) + T(b_2n) + \Theta(n)\) را داریم و جواب \(T(n) = \Theta(n\log n)\) است.\\
+    نسبت نامناسب فقط ضریب ثابت را بزرگ تر می‌کند زیرا عمق درخت افزایش می‌یابد، ولی ترتیب رشد \(n\log n\) حفظ می‌شود. \\
+    اگر تقسیم خیلی نامتوازن باشد(مثلا یکی همیشه \(n-1\))، پیچیدگی می‌تواند به \(\Theta(n^2)\) برسد.
+
+    \item اگر کل آرایه مرتب صعودی باشد، آنگاه برای هر تقسیم متوازن، تمام عناصر نیمه چپ کوچکتر یا مساوی تمام عناصر نیمه راست هستند. بنابراین وقتی دو نیمه را با الگوریتم مرج استاندارد ادغام میکنیم، مقایسه ها به شکل همیشه برد عنصر از نیمه چپ انجام می‌شوند تا زمانی که نیمه چپ خالی شود. یعنی در هر ادغام دو نیمه با اندازه های برابر \(a\) و \(a\) تعداد مقایسه های انجام شده برابر \(a\) خواهد بود.
+    \\
+    در سطح پایینی (ادغام زوج های تک عنصری) تعداد مقایسه ها در آن سطح برابر \(\frac{n}{2}\) است. \\
+    در هر سطر بالاتر، برای هر ادغام دو زیرآرایه‌ی برابر اندازه‌ی \(2^{j-1}\) مقایسه های انچام شده برابر \(2^{j-1}\) است و تعداد ادغام ها در آن سطح برابر \(\frac{n}{2^j}\) است.
+    بنابراین مجموع مقایسه ها در هر سطح همیشه برابر \(\frac{n}{2}\) است.\\
+    عمق درخت برابر \(\log n\) است.\\
+    پس مجموع کل مقایسه ها در حالت کاملا مرتب: \\
+    \begin{center}
+        \(Comparisons_{sorted} = \frac{n}{2}.\log n\)
+    \end{center}
+\end{enumerate}
+
+\newpage
+
+
+\question تابع آکرمان: \\
+\(func(2, 3) = func(1, func(2, 2)) = func(1, 7) = 9\) \\ \vspace*{0.5\baselineskip}
+\(func(2, 2) = func(1, func(2, 1)) = func(1, 5) = 7\) \\ \vspace*{0.5\baselineskip}
+\(func(2, 1) = func(1, func(2, 0)) = func(1, 3) = 5\) \\ \vspace*{0.5\baselineskip}
+\(func(2, 0) = func(1, 1) = 3\) \\ \vspace*{0.5\baselineskip}
+\(func(1, 1) = func(0, func(1, 0)) = func(0, 2) = 3\) \\ \vspace*{0.5\baselineskip}
+\(func(1, 0) = func(0, 1) = 2\)\\ \vspace*{0.5\baselineskip}
+\(func(0, 1) = 2\)
+
+
 
 
 \end{questions}

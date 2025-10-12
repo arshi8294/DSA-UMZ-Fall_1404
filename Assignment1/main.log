@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.9)  12 OCT 2025 19:20
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.9)  13 OCT 2025 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1135,7 +1135,8 @@ ext;"
 text;"
 
 LaTeX Info: Redefining \latinfont on input line 61.
- (main.aux)
+
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -1155,7 +1156,6 @@ LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 \c@lstlisting=\count435
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1350,10 +1350,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 24284 strings out of 403246
- 539509 string characters out of 5459539
- 1230690 words of memory out of 5000000
- 52313 multiletter control sequences out of 15000+600000
+ 24281 strings out of 403246
+ 539472 string characters out of 5459539
+ 1230698 words of memory out of 5000000
+ 52312 multiletter control sequences out of 15000+600000
  628820 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  116i,10n,121p,1163b,1393s stack positions out of 10000i,1000n,20000p,200000b,200000s
