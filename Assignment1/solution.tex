@@ -1,0 +1,150 @@
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Path=font/,Extension=.ttf,BoldFont=B Zar Bold]{B Zar}
+\setlatintextfont[Scale=0.833]{Times New Roman}
+
+
+
+\runningfooter{}{\thepage}{}
+\firstpagefooter{}{\thepage}{}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    تمرین اول ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    الگوریتم‌ها و حل مسئله - پیچیدگی زمانی - الگوریتم های بازگشتی
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+\today
+
+\end{center}
+
+
+\end{titlepage}

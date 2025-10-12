@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.9)  10 OCT 2025 04:38
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.9)  12 OCT 2025 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1138,22 +1138,22 @@ LaTeX Info: Redefining \latinfont on input line 61.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 \c@lstlisting=\count435
 
 *geometry* driver: auto-detecting
@@ -1224,12 +1224,12 @@ LaTeX Font Info:    ... okay on input line 65.
 
 File: figure/logo.png Graphic file (type bmp)
 <figure/logo.png>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
 
 (C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 76.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
 
 (C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1239,74 +1239,123 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 [][]
  []
 
 Missing character: There is no W in font [font/B Zar.ttf]/OT:language=dflt;scri
 pt=arab;mapping=persian-tex-text;!
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 8.32993pt on input line 181.
+(Font)              scaled to size 8.32993pt on input line 183.
 
 (C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1
 .sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
 [][][][]
  []
 
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
-(Font)              scaled to size 7.49693pt on input line 182.
+(Font)              scaled to size 7.49693pt on input line 184.
 (code/linearSearch.py
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/n' will be
 (Font)              scaled to size 4.16496pt on input line 1.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1.
 )
-\endL or \endR problem (0 missing, 1 extra) in paragraph at lines 182--183
+\endL or \endR problem (0 missing, 1 extra) in paragraph at lines 184--185
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--203
+Underfull \hbox (badness 10000) in paragraph at lines 200--205
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 [][]
  []
 
 
 
 [1]
-This exam contains 6 questions with 0 parts, 0 subparts, and 0 subsubparts.
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+[][][][]
+ []
+
+(code/selection.py)
+\endL or \endR problem (0 missing, 1 extra) in paragraph at lines 231--241
+[][] \TU/BZar(0)/m/n/10 برای $\OML/cmm/m/it/10 n > m$ \TU/BZar(0)/m/n/10 دلخواه
+ عمل جمع چند بار تکرار می‌شود؟ []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
+[][]
+ []
+
+
+(C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1
+.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.
+sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+[][][][]
+ []
+
+(code/ackerman.c)
+\endL or \endR problem (0 missing, 1 extra) in paragraph at lines 254--255
+[][] []
+ []
+
+
+
+[2]
+This exam contains 10 questions with 0 parts, 0 subparts, and 0 subsubparts.
 This exam has a total of 0 points.
 This exam has a total of 0 bonus points.
+
+Class exam Warning: Point totals have changed. Rerun to get point totals right.
+
+
 (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 24153 strings out of 403246
- 537582 string characters out of 5459539
- 1161758 words of memory out of 5000000
- 52193 multiletter control sequences out of 15000+600000
+ 24284 strings out of 403246
+ 539509 string characters out of 5459539
+ 1230690 words of memory out of 5000000
+ 52313 multiletter control sequences out of 15000+600000
  628820 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  116i,10n,121p,1163b,1393s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (2 pages).
+Output written on main.pdf (3 pages).
