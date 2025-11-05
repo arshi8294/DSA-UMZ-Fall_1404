@@ -1,0 +1,295 @@
+
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Scale=1.1,Path=font/,Extension=.ttf,BoldFont=B Zar Bold]{B-NAZANIN}
+\setlatintextfont[Scale=0.900]{Times New Roman}
+
+
+
+\runningfooter{}{\thepage}{}
+\firstpagefooter{}{\thepage}{}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    تمرین دوم ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    داده ساختار‌های پایه
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+\today
+
+\end{center}
+
+
+\end{titlepage}
+
+\begin{questions}
+
+\question
+یک ماتریس اسپارس، ماتریسی است که اکثر عناصر آن صفر هستند. به عبارت دیگر، تعداد عناصر غیرصفر آن در مقایسه با کل عناصر ماتریس بسیار کم است.
+\newline
+ماتریس معمولی (متراکم): همه یا بیشتر خانه‌ها پر از عدد هستند.
+\newline
+ماتریس اسپارس (خلوت): بیشتر خانهها خالی (صفر) هستند.
+\newline
+\vspace*{1\baselineskip}
+\textbf{تبدیل ماتریس اسپارس به متراکم}
+    \[    
+    \begin{bmatrix}
+        0 & 0 & 3 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 8 \\
+        0 & 0 & 0 & 5 & 0 & 0 \\
+        9 & 0 & 0 & 0 & 0 & 12\\
+        0 & 0 & 0 & 10 & 0 & -5
+    \end{bmatrix}
+    \]
+
+    \begin{center}
+        \(\Downarrow\)
+    \end{center}
+
+    \[
+    \begin{bmatrix}
+        5 & 6 & 7 \\
+        1 & 0 & 1 \\
+        1 & 5 & 8 \\
+        2 & 3 & 5 \\
+        3 & 0 & 9 \\
+        3 & 5 & 12 \\
+        4 & 3 & 10 \\
+        4 & 5 & -5
+
+
+    \end{bmatrix}
+    \]
+    سطر اول ماتریس متراکم به ترتیب تعداد سطر، تعداد ستون و تعداد درایه های غیرصفر را نشان می‌دهد.\\
+    سطر های دیگر نیز به ترتیب شماره سطر، شماره ستون و مقدار درایه های غیر صفر ماتریس اسپارس را نشان میدهند.
+
+
+    \begin{enumerate}
+        \item الگوریتمی برای محاسبه‌ی ترانهاده‌ی ماتریس اسپارس \(M_{p*q}\) بنویسید.
+        \item متوسط تعداد جستجو های مورد نیاز برای جستجوی دودویی موفق در ماتریس زیر چقدر است؟
+        \[
+        \begin{bmatrix}
+        0   & 0   & 0   & 120  & 0   & 0   & 0  \\
+        0   & 0   & 0   & 0   & 0   & 0   & 101 \\
+        0   & 0   & 0   & 0   & 83  & 0   & 0   \\
+        0   & 0   & 0   & 0   & 0   & 54   & 0  \\
+        0   & 0   & 0   & 0   & 0   & 0   & 0   \\
+        0   & 9   & 0   & 0   & 0   & 0   & 0   \\
+        0   & 0   & 0   & 0   & 0   & 7  & 0    \\
+        0   & 0   & 0   & 0   & 3   & 0   & 0   \\
+        0   & 0   & 2   & 0   & 0   & 0   & 0   \\
+        1   & 0   & 0   & 0   & 0   & -6   & 0  \\
+        \end{bmatrix}
+    \]
+
+    \end{enumerate}
+\vspace*{1\baselineskip}
+
+\question 
+برای ضرب بهینه ماتریس های زیر، آن ها را پرانتزبندی کنید.\\
+\(A_{10*2}*B_{2*25}*C_{25*3}*D_{3*4}\)
+
+
+
+\vspace*{1\baselineskip}
+
+\question
+    عبارت میانوندی زیر را به پسوندی تبدیل کنید.
+    \(A*(B-D)/E-F(G+F/K)\)
+\vspace*{1\baselineskip}
+% 40
+\question
+سه پشته‌ی \lr{\(S_1, S_2, S_3\)} هر یک حاوی دو عدد به شکل زیر موجود هستند.\\
+\[
+\begin{array}{|c|}
+\\ \hline
+1 \\ \hline
+2 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+3 \\ \hline
+4 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+5 \\ \hline
+6 \\ \hline
+\end{array}
+\]
+دو عملگر \(poppush(i, j)\) و \(pop(i)\) بصورت زیر تعریف شده‌اند.
+\(poppush(i, j)\) یک قلم از پشته \(S_i\) حذف و به پشته \(S_j\) اضافه می‌کند.
+\(pop(i)\) یک قلم از پشته \(S_i\) حذف و سپس آن را چاپ می کند.
+برای چاپ اعداد 1 تا 6 به صورت 1و 3و 5و 2و 4و 6 عملگر \(poppush\)
+بایستی حداقل چند بار مورد استفاده قرار گیرد؟
+
+\newpage
+
+\question
+تابع زیر چه کاری انجام می‌دهد؟ پیچیدگی زمانی آن را پیدا کنید.(ورودی تابع گره آغازین لیست پیوندی یکطرفه است)\\
+\lr{\lstinputlisting[language=Python]{code/palindrome.py}}
+
+\question
+الگوریتمی ارائه دهید که بدون تغییر ساختار یک لیست پیوندی تشخیص دهد این لیست دور دارد یا خیر.
+\vspace*{\baselineskip}
+
+\question
+عبارت \(\{x+(y-[a+b]*c-[(d+e)])\}/(j-(K-[L-n]))\) را در نظر بگیرید.
+می‌خواهیم با استفاده از یک پشته بررسی کنیم که آیا پرانتز، کروشه و آکولادها بدرسی تطبیق می‌شوند یا نه. پشته مورد استفاده حداقل بایستی گنجایش چند عنصر را داشته باشد؟
+\begin{checkboxes}
+    \choice 4
+    \choice 9
+    \choice 18
+    \choice 27
+\end{checkboxes}
+
+\end{questions}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,315 @@
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Scale=1.1,Path=font/,Extension=.ttf,BoldFont=B Zar Bold]{B-NAZANIN}
+\setlatintextfont[Scale=0.900]{Times New Roman}
+
+
+
+\runningfooter{}{\thepage}{}
+\firstpagefooter{}{\thepage}{}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    پاسخ تمرین اول ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    الگوریتم‌ها و حل مسئله - پیچیدگی زمانی - الگوریتم های بازگشتی
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+% \today
+
+\end{center}
+
+
+\end{titlepage}
+
+\begin{questions}
+
+\question
+یادآوری: اگر \(f(n)\) و \(g(n)\) توابعی صعودی باشند و \(\log(f(n))\) از \(\log(g(n))\) رشد بیشتری داشته باشد، آنگاه \(f(n)\) از \(g(n)\) رشد بیشتری دارد.\\
+البته در صورتی که رشد لگاریتم توابع از مرتبه‌ی یکسانی شود، نمی‌توان درباره هم مرتبه بودن توابع اظهار نظر کرد.\\
+\begin{flushleft}
+    \(\log(g(n)) = \log(n^{\log n}) = \log^2 n\) \\ \vspace*{0.5\baselineskip}
+    \(\log(f(n)) = \log(\log^n n) = n\log(\log(n))\)\\ \vspace*{0.5\baselineskip}
+    \(\lim_{n \to \infty} \frac{\log(f(n))}{\log(g(n))} = \lim_{n \to \infty} \frac{n\log(\log(n))}{\log^2(n)}\)\\ \vspace*{0.5\baselineskip}
+    \(\log n = m, n = 2^{m}\)\\ \vspace*{0.5\baselineskip} 
+    \(\lim_{n \to \infty} \frac{2^{m}\log(m)}{m^2} = \infty \Rightarrow g(n) = O(f(n))\)
+\end{flushleft}
+
+\question
+مانند سوال قبل رفتار می کنیم.\\
+\begin{flushleft}
+    
+\(\log{f(n)} = \log{n}.\log{4} = 2\log n = \Theta(\log n)\)\\
+\(\log{g(n)} = \log^2(n) = \Theta(\log^2 n)\)\\
+\(\log{h(n)} = 2\log(\log(n)) = \Theta(\log(\log(n)))\) \\
+\(\Rightarrow h(n) \leq f(n) \leq g(n)\)
+
+\end{flushleft}
+
+
+% \question
+% عمل جستجوی خطی اگر \lr{target} در \lr{arr[1]} باشد. بهترین حالت است و تعداد مقایسه ها \(O(1)\) است. اگر \lr{target} در \lr{arr[n]} باشد،
+% یا اصلا نباشد، بدترین حالت است و \lr{n} مقایسه انجام می‌شود.\\
+% بررسی حالت متوسط معمولا دشوار است زیرا باید با در نظر گرفتن تمام حالات ممکن میانگین گرفت.\\
+% اگر \lr{target} با احتمال \lr{p} در \lr{arr} باشد در نتیجه با احتمال \lr{(1-p)} در آن وجود ندارد. در این صورت داریم:\\
+% \begin{flushleft}
+%     \(\frac{p}{n}(\sum_{i=1}^{n} i) + (1-p)n = \frac{p(n+1)}{2} + (1-p)n\)
+% \end{flushleft}
+% که با \(p=0.5\) می‌شود: \(\frac{3n+1}{4}\)
+
+
+
+% \question
+% خیر فرض کنید \(f(n) = n\) و \(g(n) = n^{1+\sin{n}}\). این مثال درستی نتایج ذکر شده را نقض می‌کند.
+
+\question
+یادآوری: \\
+\begin{flushleft}
+    \(a^b = e^{b.\ln{a}}\)\\
+\end{flushleft}
+طبق نکته‌ی بالا خواهیم داشت:\\
+\begin{flushleft}
+    \(f_3(n) = f_5(n) = e^{\log{n}.\log{\log{n}}}\)
+\end{flushleft}
+حال توابع را بصورت لگاریتمی با هم مقایسه می‌کنیم:
+\begin{flushleft}
+    \(\ln f_1 \sim 1.01 \ln{n}\)\\
+    \(\ln f_2 \sim (\sqrt{n}).\ln{2}\)\\
+    \(\ln f_4 \sim (ln{n})^2\)\\
+    \(\ln f_3 = \ln f_5 \sim \ln{n}.\ln{\ln{n}}\)\\
+
+\end{flushleft}
+
+با مقایسه لگاریتم توابع، ترتیب صعودی توابع از کوچک به بزرگ خواهد شد:\\
+\begin{flushleft}
+    \(f_1 < f_3 \equiv f_5 < f_4 < f_2\)
+\end{flushleft}
+
+\newpage
+
+
+\question
+گزینه‌ی 1\\
+تعداد \lr{n} قطعه گوشت خرس را \lr{n} روز زنده نگه می‌دارد.\\
+\(\frac{n}{2}\) از این قطعات زوج است که این قطعات مجددا ذخیره می‌شوند که در نتیجه خرس را \(\frac{n}{2}\) روز دیگر زنده نگه می‌دارد.\\
+سپس \(\frac{n}{4}\) دیگر از قطعات زوج است و باقی می‌ماند در نتیجه خرس \(\frac{n}{4}\) روز دیگر نیز زنده می‌ماند.
+به همین ترتیب باقی روزهای عمر خرس برابر است با:\\
+\begin{flushleft}
+    \(n + \frac{n}{2} + \frac{n}{4} + \frac{n}{8} + \frac{n}{16} = n(\sum_{i=0}^{\infty}) = n*\frac{1}{1-\frac{1}{2}} = 2n\)
+    
+\end{flushleft}
+
+
+\question
+\begin{enumerate}
+    \item حل با استفاده از قضیه اصلی:\\
+    \begin{flushleft}
+            
+            \(a=4, b=2, f(n)=\log^2{n!} = \Theta(n^{2}\log^{2}n)\)\\ \vspace*{0.5\baselineskip}
+            \(n^{\log_{b} a} = n^2\)\\ \vspace*{0.5\baselineskip}
+            \(f(n) = \Theta(n^{\log_{b} a}.\log^k{n}) \Rightarrow T(n) = \Theta(n^{\log_{b} a}.\log^{k+1}{n})\)\\ \vspace*{0.5\baselineskip}
+            \(\Rightarrow T(n) = \Theta(n^{2}.\log^{3}{n})\)
+    \end{flushleft}
+
+    % \item حل با قضیه‌ی اصلی + تغییر متغیر:
+    % \begin{flushleft}
+    %     \(h(n) = \frac{T(n)}{n} = \frac{3T(\sqrt[3]{n})}{\sqrt[3]{n}} + \log n = 3h(\sqrt[3]{n}) + \log n\)\\ \vspace*{0.5\baselineskip}
+    %     \(m=\log n, n=2^m\)\\ \vspace*{0.5\baselineskip}
+    %     \(\Rightarrow F(m) = 3(\frac{m}{3}) + m \Rightarrow F(m) = \Theta(m.\log m)\)\\ \vspace*{0.5\baselineskip}
+    %     \(h(n) = \Theta(\log n.\log{\log{n}}) \Rightarrow T(n) = \Theta(n.\log n \log{\log n})\)
+
+    % \end{flushleft}
+
+    % \item حل به روش درخت بازگشتی:\\
+    % ضریب های تقسیم باعث می‌شوند اندازه زیر مسائل به سرعت کوچک شوند عمق درخت بازگشتی تقریبا \(\Theta(\log n)\) اما در هر سطح مقدار تابع \(f\) بسیار کوچکتر از \(f(n)\) است.\\
+    % بنابراین سهم مجموع همه درخت ها از هزینه ریشه بسیار ناچیز است و هزینه کل با همان مرتبه‌ی\(f(n)\) هم ارز است.\\
+    % \begin{flushleft}
+    %     \(T(n) = \Theta(n^{\sqrt{\log n}})\)
+    % \end{flushleft}
+
+    \item اثبات:\\
+    \begin{flushleft}
+        \(\log{n!} = \sum_{i=1}^{n}\log{i}\)\\ \vspace*{0.5\baselineskip}
+        \(\sum_{i=1}^{n}\log{i} \leq \sum_{i=1}^{n}\log{n} = n\log n\)\\ \vspace*{0.5\baselineskip}
+        \(\sum_{i=1}^{n}\log{i} \geq \sum_{i=\frac{n}{2}}^{n}\log{i} \geq \sum_{i=\frac{n}{2}}^{n}\log{\frac{n}{2}} = \frac{n}{2}.\log{\frac{n}{2}}\)\\ \vspace*{0.5\baselineskip}
+        \(\Rightarrow \log{n!} = \Theta(n\log n)\)
+        
+    \end{flushleft}
+\end{enumerate}
+
+
+
+% \question
+% گزینه‌ی 3\\
+% تابع مورد نظر \(\binom{n}{m}\) بار عدد 1 را با هم جمع می‌زند و عملگر جمع \(n+1\) بار اجرا می‌شود.
+
+
+
+\question
+
+\begin{enumerate}
+    \item برای تقسیم های ثابت مثل نسبت 1 به 3 یا 1 به 4، بازگشت \(T(n) = T(b_1n) + T(b_2n) + \Theta(n)\) را داریم و جواب \(T(n) = \Theta(n\log n)\) است.\\
+    نسبت نامناسب فقط ضریب ثابت را بزرگ تر می‌کند زیرا عمق درخت افزایش می‌یابد، ولی ترتیب رشد \(n\log n\) حفظ می‌شود. \\
+    اگر تقسیم خیلی نامتوازن باشد(مثلا یکی همیشه \(n-1\))، پیچیدگی می‌تواند به \(\Theta(n^2)\) برسد.
+
+    \item اگر کل آرایه مرتب صعودی باشد، آنگاه برای هر تقسیم متوازن، تمام عناصر نیمه چپ کوچکتر یا مساوی تمام عناصر نیمه راست هستند. بنابراین وقتی دو نیمه را با الگوریتم مرج استاندارد ادغام میکنیم، مقایسه ها به شکل همیشه برد عنصر از نیمه چپ انجام می‌شوند تا زمانی که نیمه چپ خالی شود. یعنی در هر ادغام دو نیمه با اندازه های برابر \(a\) و \(a\) تعداد مقایسه های انجام شده برابر \(a\) خواهد بود.
+    \\
+    در سطح پایینی (ادغام زوج های تک عنصری) تعداد مقایسه ها در آن سطح برابر \(\frac{n}{2}\) است. \\
+    در هر سطر بالاتر، برای هر ادغام دو زیرآرایه‌ی برابر اندازه‌ی \(2^{j-1}\) مقایسه های انچام شده برابر \(2^{j-1}\) است و تعداد ادغام ها در آن سطح برابر \(\frac{n}{2^j}\) است.
+    بنابراین مجموع مقایسه ها در هر سطح همیشه برابر \(\frac{n}{2}\) است.\\
+    عمق درخت برابر \(\log n\) است.\\
+    پس مجموع کل مقایسه ها در حالت کاملا مرتب: \\
+    \begin{center}
+        \(Comparisons_{sorted} = \frac{n}{2}.\log n\)
+    \end{center}
+\end{enumerate}
+
+% \newpage
+
+
+\question
+ تابع آکرمان را باید تریس کنیم که خواهیم داشت:
+\begin{flushleft}
+    
+    \(func(2, 3) = func(1, func(2, 2)) = func(1, 7) = 9\) \\ \vspace*{0.5\baselineskip}
+    \(func(2, 2) = func(1, func(2, 1)) = func(1, 5) = 7\) \\ \vspace*{0.5\baselineskip}
+    \(func(2, 1) = func(1, func(2, 0)) = func(1, 3) = 5\) \\ \vspace*{0.5\baselineskip}
+    \(func(2, 0) = func(1, 1) = 3\) \\ \vspace*{0.5\baselineskip}
+    \(func(1, 1) = func(0, func(1, 0)) = func(0, 2) = 3\) \\ \vspace*{0.5\baselineskip}
+    \(func(1, 0) = func(0, 1) = 2\)\\ \vspace*{0.5\baselineskip}
+    \(func(0, 1) = 2\)
+    
+    
+\end{flushleft}
+
+
+\end{questions}
+
+\end{document}
