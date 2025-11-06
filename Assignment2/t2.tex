@@ -194,8 +194,8 @@
 
 
     \begin{enumerate}
-        \item الگوریتمی برای محاسبه‌ی ترانهاده‌ی ماتریس اسپارس \(M_{p*q}\) بنویسید.
-        \item متوسط تعداد جستجو های مورد نیاز برای جستجوی دودویی موفق در ماتریس زیر چقدر است؟
+        \item شبه کدی برای محاسبه‌ی ترانهاده‌ی ماتریس اسپارس \(M_{p*q}\) بنویسید.
+        \item متوسط تعداد مقایسه‌های مورد نیاز برای جستجوی دودویی موفق در ماتریس زیر چقدر است؟
         \[
         \begin{bmatrix}
         0   & 0   & 0   & 120  & 0   & 0   & 0  \\
@@ -224,7 +224,7 @@
 
 \question
     عبارت میانوندی زیر را به پسوندی تبدیل کنید.
-    \(A*(B-D)/E-F(G+F/K)\)
+    \(A*(B-D)/E-F*(G+H/K)\)
 \vspace*{1\baselineskip}
 % 40
 \question
@@ -232,22 +232,22 @@
 \[
 \begin{array}{|c|}
 \\ \hline
-1 \\ \hline
 2 \\ \hline
+1 \\ \hline
 
 \end{array}
 \qquad
 \begin{array}{|c|}
 \\ \hline
-3 \\ \hline
 4 \\ \hline
+3 \\ \hline
 
 \end{array}
 \qquad
 \begin{array}{|c|}
   \\ \hline
-5 \\ \hline
 6 \\ \hline
+5 \\ \hline
 \end{array}
 \]
 دو عملگر \(poppush(i, j)\) و \(pop(i)\) بصورت زیر تعریف شده‌اند.
@@ -264,17 +264,38 @@
 
 \question
 الگوریتمی ارائه دهید که بدون تغییر ساختار یک لیست پیوندی تشخیص دهد این لیست دور دارد یا خیر.
+% \vspace*{\baselineskip}
+
+% \question
+% عبارت \(\{x+(y-[a+b]*c-[(d+e)])\}/(j-(K-[L-n]))\) را در نظر بگیرید.
+% می‌خواهیم با استفاده از یک پشته بررسی کنیم که آیا پرانتز، کروشه و آکولادها بدرسی تطبیق می‌شوند یا نه. پشته مورد استفاده حداقل بایستی گنجایش چند عنصر را داشته باشد؟
+% \begin{checkboxes}
+%     \choice 4
+%     \choice 9
+%     \choice 18
+%     \choice 27
+% \end{checkboxes}
+
 \vspace*{\baselineskip}
 
+
 \question
-عبارت \(\{x+(y-[a+b]*c-[(d+e)])\}/(j-(K-[L-n]))\) را در نظر بگیرید.
-می‌خواهیم با استفاده از یک پشته بررسی کنیم که آیا پرانتز، کروشه و آکولادها بدرسی تطبیق می‌شوند یا نه. پشته مورد استفاده حداقل بایستی گنجایش چند عنصر را داشته باشد؟
-\begin{checkboxes}
-    \choice 4
-    \choice 9
-    \choice 18
-    \choice 27
-\end{checkboxes}
+فرض کنید صفی داریم که عملیات های زیر به ترتیب بر رویش انجام میشوند:
+\begin{enumerate}
+    \item [\bullet] \lr{enqueue(10)}
+    \item [\bullet] \lr{enqueue(20)}
+    \item [\bullet] \lr{enqueue(30)}
+    \item [\bullet] \lr{dequeue()}
+    \item [\bullet] \lr{enqueue(40)}
+    \item [\bullet] \lr{enqueue(50)}
+    \item [\bullet] \lr{dequeue()}
+    \item [\bullet] \lr{enqueue(60)}
+    \item [\bullet] \lr{dequeue()}
+\end{enumerate}
+\begin{enumerate}
+    \item وضعیت نهایی صف و خروجی ها را به ترتیب پیدا کنید. \vspace*{0.5\baselineskip}
+    \item اگر این صف، صفی چرخشی به طول 5 بوده باشد، مقادیر اندیس های \lr{front} و \lr{rear} رو مشخص کنید.
+\end{enumerate}
 
 \end{questions}
 

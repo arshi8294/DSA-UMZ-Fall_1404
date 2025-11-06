@@ -1,0 +1,457 @@
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Scale=1.1,Path=font/,Extension=.ttf,BoldFont=B Zar Bold]{B-NAZANIN}
+\setlatintextfont[Scale=0.900]{Times New Roman}
+
+
+
+\runningfooter{}{\thepage}{}
+\firstpagefooter{}{\thepage}{}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    پاسخ تمرین اول ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    الگوریتم‌ها و حل مسئله - پیچیدگی زمانی - الگوریتم های بازگشتی
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+% \today
+
+\end{center}
+
+
+\end{titlepage}
+
+\begin{questions}
+
+\question
+\begin{enumerate}
+\item 
+\lr{\lstinputlisting[language=Python]{code/sparss.py}}
+
+
+\item ابتدا ماتریس اسپارس را تبدیل به ماتریس متراکم می‌کنیم:
+\[\begin{bmatrix}
+    7 & 10 & 10 \\
+    0 & 4 & 120 \\
+    1 & 6 & 101 \\
+    2 & 4 & 83 \\
+    3 & 5 & 54 \\
+    5 & 1 & 9 \\
+    6 & 5 & 7 \\
+    7 & 4 & 3 \\
+    8 & 3 & 2 \\
+    9 & 0 & 1 \\
+    9 & 5 & -6
+\end{bmatrix}\]
+
+حال با توجه به مرتب بودن ماتریس بر اساس مقادیر می توان عملیات جستجوی دودویی را بر روی آرایه ای از \lr{value} های ماتریس متراکم انجام داد.\\
+این کار همانند انجام جستجوی دودویی بر روی آرایه ای با 10 عنصر است که تعداد مقایسه ها در حالت متوسط می‌شود: \\
+\begin{flushleft}
+    
+    \(\sum_{i=1}^{\log{n}}\frac{i*2^{i-1}}{n} \Rightarrow \frac{3+2+3+4+1+3+4+2+3+4}{10} = \frac{29}{10}\)
+\end{flushleft}
+
+\end{enumerate}
+
+
+\question
+یادآوری: در ضرب ماتریس ها اگر ابتدا ماتریس هایی را ضرب کنیم که بعد وسط آن‌ها بزرگتر و بعد کناری آن‌ها کوچکتر است، تعداد ضرب ها کمتر می‌شود.\\
+در این مثال بهترین حالت میشود:
+
+\begin{flushleft}
+    \(A*((B*C)*D)\)
+\end{flushleft}
+با مجموع تعداد ضرب‌های:
+\begin{flushleft}
+    \((2*25*3)+(2*3*4)+(10*2*4) = 254\)
+\end{flushleft}
+
+\question
+شرح مرحله به مرحله: \\
+\begin{enumerate}
+    \item \(token = start , stack = [ ], output = [ ]\)
+    \item \(token = A , stack = [ ], output = [A]\)
+    \item \(token = * , stack = [*], output = [A]\)
+    \item \(token = {(} , stack = [{(}, *], output = [A]\)
+    \item \(token = B , stack = [{(}, *], output = [A, B]\)
+    \item \(token = - , stack = [-, {(}, *], output = [A, B]\)
+    \item \(token = D , stack = [-, {(}, *], output = [A, B, D]\)
+    \item \(token = {)} , stack = [*], output = [A, B, D, -]\)
+    \item \(token = /, stack = [/], output = [A, B, D, -, *]\)
+    \item \(token = E , stack = [/], output = [A, B, D, -, *, E]\)
+    \item \(token = - , stack = [-], output = [A, B, D, -, *, E, /]\)
+    \item \(token = F , stack = [-], output = [A, B, D, -, *, E, /, F]\)
+    \item \(token = * , stack = [*, -], output = [A, B, D, -, *, E, /, F]\)
+    \item \(token = {(} , stack = [{(}, *, -], output = [A, B, D, -, *, E, /, F]\)
+    \item \(token = G , stack = [{(}, *, -], output = [A, B, D, -, *, E, /, F, G]\)
+    \item \(token = + , stack = [+, {(}, *, -], output = [A, B, D, -, *, E, /, F, G]\)
+    \item \(token = H , stack = [+, {(}, *, -], output = [A, B, D, -, *, E, /, F, G, H]\)
+    \item \(token = / , stack = [/, +, {(}, *, -], output = [A, B, D, -, *, E, /, F, G, H]\)
+    \item \(token = K , stack = [/, +, {(}, *, -], output = [A, B, D, -, *, E, /, F, G, H, K]\)
+    \item \(token = {)} , stack = [*, -], output = [A, B, D, -, *, E, /, F, G, H, K, /, +]\)
+    \item \(token = end , stack = [], output = [A, B, D, -, *, E, /, F, G, H, K, /, +, *, -]\)\\
+    \begin{center}
+        خروجی نهایی: \(ABD-*E/FGHK/+*-\)
+    \end{center}
+
+\end{enumerate}
+
+\question
+شرح مرحله به مرحله: \\
+\[
+\begin{array}{|c|}
+\\ \hline
+2 \\ \hline
+1 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+4 \\ \hline
+3 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{poppush(1, 3)}\)
+    
+\end{center}
+
+\[
+\begin{array}{|c|}
+\\ \hline
+1 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+4 \\ \hline
+3 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+2 \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{pop(1)}\)
+\end{center}
+
+\[
+\begin{array}{|c|}
+\\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+4 \\ \hline
+3 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+2 \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow(poppush(2, 1))\)
+\end{center}
+
+
+\[
+\begin{array}{|c|}
+\\ \hline
+4 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+3 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+2 \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{pop(2)}\)
+\end{center}
+
+
+\[
+\begin{array}{|c|}
+\\ \hline
+4 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+2 \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{poppush(3, 1)}\)
+\end{center}
+
+
+\[
+\begin{array}{|c|}
+\\ \hline
+2 \\ \hline
+4 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+6 \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{poppush(3, 2)}\)
+\end{center}
+
+
+\[
+\begin{array}{|c|}
+\\ \hline
+2 \\ \hline
+4 \\ \hline
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+\\ \hline
+6 \\ \hline
+
+
+\end{array}
+\qquad
+\begin{array}{|c|}
+  \\ \hline
+5 \\ \hline
+\end{array}
+\]
+\begin{center}
+    \(\Downarrow{pop(3), pop(1), pop(1), pop(2)}\)
+\end{center}
+
+\begin{center}
+    \(Output = 1, 3, 5, 2, 4, 6\)\\
+    \lr{number of poppush calls: 4}
+\end{center}
+
+
+\question
+الگوریتم ذکر شده آینه‌ای بودن(\lr{palindrome}) یک لیست پیوندی یک طرفه را بررسی می‌کند.\\
+در این الگوریتم از یک پشته جهت ذخیره سازی و معکوس کردن نیمه اول لیست استفاده شده؛ به این صورت که با روش نشانگر تند و کند وسط لیست پیدا می‌شود.\\
+سپس عناصر نیمه اول لیست به به پشته می‌روند.\\
+\lr{if} بررسی میکند که آیا لیست طولش فرد است یا خیر که اگر فرد باشد باید برای بررسی آینه‌ای بودن لیست عنصر میانی را در نظر نگیریم. \\
+در بخش انتهایی تابع هم عناصر نیمه دوم لیست پیوندی با معکوس نیمه اول لیست مقایسه میشوند تا آینه‌ای بودن یا نبودن لیست مشخص شود.
+
+
+\question
+دو اشاره‌گر به ابتدای لیست نگه دارید. در هر مرحله، با استفاده از تابع \lr{next} اولی را یک واحد افزایش دهید و دومی را ۲ واحد. سپس این دو اشاره‌گر را مقایسه کنید. اگر یکسان بودند، دور وجود دارد.
+برای اثبات درستی، دقت کنید که اگر دور نباشد، هرگز این دو اشاره‌گر یکی نمی‌شوند و در نهایت، در زمان خطی، یکی از آن‌ها به ته لیست می‌رسد (اولی اشاره‌گر دوم می‌رسد).
+اگر دور وجود داشته باشد، پس از زمان خطی، هر دو اشاره‌گر وارد دور می‌شوند.
+هنگامی که درون دور قرار گرفتند، چون در هر مرحله، یکی با سرعت 2 و دیگری با سرعت 1 حرکت می‌کند،
+مثل این است که یکی ثابت است و دیگری با سرعت {1-} حرکت می‌کند. پس در زمان خطی به هم می‌رسند.
+
+\question
+\begin{enumerate}
+    \item تغییرات صف: \\
+    \begin{flushleft}
+            \([] \rightarrow [10] \rightarrow [10, 20] \rightarrow [10, 20, 30] \rightarrow [20, 30] \rightarrow [20, 30, 40]\)\\
+            \(\rightarrow [20, 30, 40, 50] \rightarrow [30, 40, 50] \rightarrow [30, 40, 50, 60] \rightarrow [40, 50, 60]\)
+
+    \end{flushleft}            
+    \item بررسی مرحله به مرحله: \\
+    \begin{flushleft}
+            \(start: front=-1, rear=-1\)\\
+            \(enqueue(10): front=0, rear=0\)\\
+            \(enqueue(20): front=0, rear=1\)\\
+            \(enqueue(30): front=0, rear=2\)\\
+            \(dequeue(): front=1, rear=2\)\\
+            \(enqueue(40): front=1, rear=3\)\\
+            \(enqueue(50): front=1, rear=4\)\\
+            \(dequeue(): front=2, rear=4\)\\
+            \(enqueue(60): front=2, rear=0\)\\
+            \(dequeue(): front=3, rear=0\)\\
+    \end{flushleft}
+    \begin{center}
+        پاسخ نهایی:\\
+        \(rear = 0, front = 3\)
+    \end{center}
+
+
+\end{enumerate}
+
+
+\end{questions}
+
+\end{document}
