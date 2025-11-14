@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762502880.46617 "c:/Users/FARAZ-STORE/Desktop/TA-DSA/DSA-UMZ/Assignment2/t2_solution.tex" "t2_solution.pdf" "t2_solution" 1762502881.30381 2
+["pdflatex"] 1763141255.25265 "c:/Users/FARAZ-STORE/Desktop/TA-DSA/DSA-UMZ/theoreticalAssignments/Assignment1/main.tex" "main.pdf" "main" 1763141255.89689 2
   "C:/Users/FARAZ-STORE/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760059081 13289871 18fe606fa7b8241c70e27849c744f758 ""
   "C:/Users/FARAZ-STORE/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1756451144 1016 1c2b89187d12a2768764b83b4945667c ""
   "C:/Users/FARAZ-STORE/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1756451144 43906 06058dc09064474303f3b5dd62d982c0 ""
@@ -87,11 +87,11 @@
   "C:/Users/FARAZ-STORE/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/FARAZ-STORE/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/FARAZ-STORE/AppData/Local/Programs/MiKTeX/tex/latex/xepersian/xepersian.sty" 1757328769 49735 af21a157c4f9e4db98cb2b6f3121ca56 ""
-  "c:/Users/FARAZ-STORE/Desktop/TA-DSA/DSA-UMZ/Assignment2/t2_solution.tex" 1762502878 12366 2b83ce7f6c1b8c76d5c6bb0fc61e4460 ""
-  "t2_solution.aux" 1762502872 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "t2_solution.tex" 1762502878 12366 2b83ce7f6c1b8c76d5c6bb0fc61e4460 ""
+  "c:/Users/FARAZ-STORE/Desktop/TA-DSA/DSA-UMZ/theoreticalAssignments/Assignment1/main.tex" 1763141253 8606 1d5b18a63c7184a05fd0d0271e021756 ""
+  "main.aux" 1763141247 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.tex" 1763141253 8606 1d5b18a63c7184a05fd0d0271e021756 ""
   (generated)
-  "t2_solution.aux"
-  "t2_solution.log"
-  "t2_solution.pdf"
+  "main.aux"
+  "main.log"
+  "main.pdf"
   (rewritten before read)

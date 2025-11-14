@@ -1,7 +1,7 @@
-PWD c:\Users\FARAZ-STORE\Desktop\TA-DSA\DSA-UMZ\Assignment2
+PWD c:\Users\FARAZ-STORE\Desktop\TA-DSA\DSA-UMZ\theoreticalAssignments\Assignment1
 INPUT C:\Users\FARAZ-STORE\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\FARAZ-STORE\Desktop\TA-DSA\DSA-UMZ\Assignment2\t2_solution.tex
-OUTPUT t2_solution.log
+INPUT c:\Users\FARAZ-STORE\Desktop\TA-DSA\DSA-UMZ\theoreticalAssignments\Assignment1\q1-sol.tex
+OUTPUT q1-sol.log
 INPUT C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex\latex\exam\exam.cls
 INPUT C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex\latex\exam\exam.cls
 INPUT C:\Users\FARAZ-STORE\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty

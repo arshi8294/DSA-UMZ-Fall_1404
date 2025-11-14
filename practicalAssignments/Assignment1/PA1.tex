@@ -1,0 +1,300 @@
+
+\documentclass[addpoints]{exam} % addpoints برای نمایش نمره
+
+
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{tcolorbox}
+\RequirePackage{listings}
+\usepackage{hyperref}
+\usepackage{xepersian}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+
+
+\renewcommand{\labelitemi}{\scalebox{0.7}{$\bullet$}}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+\newtcolorbox{mathbox}[1][]{
+  colback=gray!5,
+  left=1mm,
+  right=1mm,
+  leftrule=0pt,
+  rightrule=1pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  sharp corners
+}
+
+
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      =   true,
+    columns         =   fixed,
+    basewidth       =   .5em,
+    backgroundcolor=\color{Gray!5},
+    tabsize=2,
+    showspaces=false,
+    showstringspaces=false,
+}
+
+\settextfont[Scale=1.1,Path=../../font/,Extension=.ttf,BoldFont=B Zar Bold]{B-NAZANIN}
+\setlatintextfont[Scale=0.900]{Times New Roman}
+
+
+
+\runningfooter{}{\thepage}{}
+\firstpagefooter{}{\thepage}{}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newgeometry{top=1cm, bottom=2cm, left=1cm, right=1cm} 
+
+\begin{flushright}
+\begin{minipage}{0.15\textwidth}
+\includegraphics[scale=.1]{../../figure/logo.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{flushright}
+\textbf{\large انجمن علمی مهندسی کامپیوتر}\\
+\large دانشگاه مازندران
+\end{flushright}
+\end{minipage}
+\end{flushright}
+
+
+
+\begin{center}
+
+\vspace*{8\baselineskip}
+
+{\LARGE 
+%------------------------------------------------------------------------------------
+  به نام خدا
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[0.4cm]
+\textbf{\Huge
+%------------------------------------------------------------------------------------
+    تمرین عملی اول ساختمان داده‌ها و الگوریتم
+%------------------------------------------------------------------------------------
+}\\
+\vspace*{0.5\baselineskip} 
+{\large
+%------------------------------------------------------------------------------------
+    داده ساختار‌های پایه
+%------------------------------------------------------------------------------------
+}
+
+\HRule \\[1.5cm]
+
+\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استاد:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+    دکتر روستایی
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{2\baselineskip} 
+
+\begin{minipage}{0.4\textwidth}
+\begin{center} \Large
+%------------------------------------------------------------------------------------
+    استادیار‌:
+%------------------------------------------------------------------------------------
+\end{center}
+\begin{center} \large
+%------------------------------------------------------------------------------------
+عرشیا عموزاد\\
+%------------------------------------------------------------------------------------
+\end{center}
+\end{minipage}
+
+\vspace*{12\baselineskip} 
+
+\today
+
+\end{center}
+
+
+\end{titlepage}
+
+
+
+
+
+\newpage
+\thispagestyle{empty} 
+
+\begin{center}
+{\Huge \textbf{نحوه‌ی ارسال و ارائه‌ی پاسخ تمرین}}
+\end{center}
+
+\vspace*{2\baselineskip}
+
+\begin{flushright}
+{\Large \textbf{مهلت و نوع فایل های ارسالی:}}
+\end{flushright}
+
+\begin{flushright}
+\begin{itemize}[rightmargin=1cm, leftmargin=3cm]
+    \item پاسخنامه باید شامل فایل های اجرایی \lr{(.py)} و فایل \lr{PDF} شرح کدها باشد.
+    \item مهلت ارسال: \textbf{1403/09/01} تا ساعت \textbf{23:59}
+    \item  پاسخ‌های خود را به آیدی تلگرام \lr{Arshi82\_94} بفرستید.
+\end{itemize}
+\end{flushright}
+
+
+\vspace*{\baselineskip}
+
+\begin{flushright}
+{\Large \textbf{ملاحظات پیاده‌سازی:}}
+\end{flushright}
+
+\begin{flushright}
+\begin{itemize}[rightmargin=1cm, leftmargin=3cm]
+    \item از پیاده‌سازی آماده کتابخانه‌ها \textbf{جلوگیری} شود.
+    \item در پیاده‌سازی های خود از داده ساختار های آموخته شده(لیست پیوندی، صف، پشته و...) استفاده کنید.
+    \item  فایل های \lr{template} کلاس ها در لینک گیت هاب زیر موجود است.(به نوع خروجی های توابع دقت شود)
+    \item \href{https://github.com/arshi8294/DSA-UMZ-Fall_1404}{لینک گیت‌هاب}
+\end{itemize}
+\end{flushright}
+
+
+\vspace*{8\baselineskip}
+
+\begin{center}
+{\large \textbf{موفق باشید}}
+\end{center}
+
+\newpage
+
+
+
+
+
+\begin{questions}
+    
+\question
+\subsection*{مسئله ۱: تاریخچه مرورگر}
+شما در حال طراحی یک مرورگر با قابلیت مدیریت تاریخچه‌ی بازدیدها هستید. مرورگر در ابتدا یک صفحه‌ی اصلی (\lr{homepage}) دارد و کاربر می‌تواند از آنجا به یک آدرس (\lr{url}) دیگر برود، یا با استفاده از دکمه‌های \lr{Back} و \lr{Forward} در تاریخچه حرکت کند.
+
+\begin{flushright}
+در این مسئله باید کلاس \lr{\textbf{BrowserHistory}} را پیاده سازی کنید که دارای متد های زیر می‌باشد: 
+\end{flushright}
+
+\begin{enumerate}
+    \item \lr{\textbf{BrowserHistory(homepage)}}: شیء را با صفحه‌ی اصلی مرورگر مقداردهی اولیه می‌کند.\\
+    \item \lr{\textbf{visit(url)}}: کاربر از صفحه‌ی جاری به آدرس \lr{url} می‌رود. تمام تاریخچه‌ی پیشرو (\lr{forward}) پاک می‌شود.\\
+    \item \lr{\textbf{back(steps)}}: کاربر \lr{steps} قدم به عقب برمی‌گردد. اگر فقط \lr{x} قدم در تاریخچه قابل بازگشت باشد و \lr{steps > x}، آنگاه فقط \lr{x} قدم بازمی‌گردد. آدرس صفحه‌ی جاری پس از بازگشت را برگردانید.\\
+    \item \lr{\textbf{forward(steps)}}: کاربر \lr{steps} قدم به جلو می‌رود. اگر فقط \lr{x} قدم در تاریخچه قابل حرکت به جلو باشد و \lr{steps > x}، آنگاه فقط \lr{x} قدم به جلو می‌رود. آدرس صفحه‌ی جاری پس از حرکت به جلو را برگردانید.\\
+\end{enumerate}
+
+*دقت شود که مانند مرورگر های واقعی در صورت \lr{visit} تاریخچه فرواردها پاک می‌شود.
+
+\vspace*{0.5\baselineskip}
+\textbf{ورودی:}\\
+\begin{flushleft}
+    \lr{["BrowserHistory", "visit", "visit", "visit", "back", "back", "forward", "visit", "forward", "back", "back"]}\\
+    \lr{[["github.com"], ["google.com"], ["facebook.com"], ["youtube.com"], [1], [1], [1], ["linkedin.com"], [2], [2], [1]]}
+\end{flushleft}
+
+\vspace*{0.5\baselineskip}
+\textbf{خروجی:}\\
+\begin{flushleft}
+    \lr{[null, null, null, null, "facebook.com", "google.com", "facebook.com", null, "linkedin.com", "google.com", "github.com"]}
+\end{flushleft}
+
+\vspace*{1\baselineskip}
+
+\question
+\subsection*{مسئله ۲: ساندویچ مربعی یا مستطیلی}
+دانش‌آموزان صف کشیده‌اند. هر دانش‌آموز یا ساندویچ مربعی (\lr{0}) را ترجیح می‌دهد یا ساندویچ مستطیلی (\lr{1}).
+
+تعداد ساندویچ‌ها با تعداد دانش‌آموزان برابر است. ساندویچ‌ها در یک پشته (\lr{stack}) قرار دارند.
+
+\vspace*{0.5\baselineskip}
+فرآیند به این صورت است:
+\begin{itemize}[rightmargin=2cm, leftmargin=2cm]
+    \item اگر ساندویچ بالای پشته، مورد علاقه‌ی دانش‌آموز اول صف باشد، آن را برمی‌دارد و صف را ترک می‌کند.
+    \item در غیر این صورت، دانش‌آموز به انتهای صف می‌رود.
+\end{itemize}
+این فرآیند ادامه می‌یابد تا زمانی که هیچ دانش‌آموزی در صف نماند که ساندویچ بالای پشته مورد علاقه‌اش نباشد.
+
+تعداد دانش‌آموزانی که غذا نخواهند خورد را برگردانید.
+
+\vspace*{0.5\baselineskip}
+\textbf{ورودی:}\\
+\begin{flushleft}
+    \lr{students = [1,1,0,0], sandwiches = [0,1,0,1]}
+    
+\end{flushleft}
+\vspace*{0.5\baselineskip}
+\textbf{خروجی:}\\
+\begin{flushleft}
+    \lr{0}
+\end{flushleft}
+
+\vspace*{1\baselineskip}
+
+\question
+\subsection*{مسئله ۳: دمای روزانه}
+یک آرایه از اعداد صحیح به شما داده می‌شود که \lr{dailyTemperatures} نام دارد و نشان‌دهنده‌ی دمای روزانه است. یک آرایه برگردانید به طوری که برای هر روز در آرایه‌ی ورودی، تعداد روزهایی که باید صبر کنید تا به یک روز گرم‌تر برسید، مشخص شود. اگر چنین روزی وجود نداشت، مقدار \lr{0} را برای آن روز قرار دهید.
+
+\vspace*{0.5\baselineskip}
+\textbf{ورودی:}\\
+\begin{flushleft}
+    \lr{temperatures = [73,74,75,71,69,72,76,73]}
+\end{flushleft}
+
+\vspace*{0.5\baselineskip}
+\textbf{خروجی:}\\
+\begin{flushleft}
+    
+    \lr{[1,1,4,2,1,1,0,0]}
+\end{flushleft}
+
+\vspace*{0.5\baselineskip}
+\textbf{توضیح:}\\
+\begin{itemize}[leftmargin=2cm, rightmargin=2cm]
+    \item برای روز اول (دمای 73)، روز بعد گرم‌تر است (74) \(\leftarrow\) 1 روز صبر کنید.\\
+    \item    برای روز سوم (دمای 75)، 4 روز بعد به دمای 76 می‌رسید \(\leftarrow\) 4 روز صبر کنید.
+\end{itemize}
+* در پیاده سازی پاسخ مسئله دقت شود که حداکثر پیچیدگی زمانی \(O(n)\) باشد.
+\end{questions}
+
+\end{document}
+
+
