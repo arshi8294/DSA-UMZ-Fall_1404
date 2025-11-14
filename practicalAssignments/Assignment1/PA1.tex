@@ -173,6 +173,7 @@
     \item پاسخنامه باید شامل فایل های اجرایی \lr{(.py)} و فایل \lr{PDF} شرح کدها باشد.
     \item مهلت ارسال: \textbf{1403/09/01} تا ساعت \textbf{23:59}
     \item  پاسخ‌های خود را به آیدی تلگرام \lr{Arshi82\_94} بفرستید.
+    \item روز ارائه‌ی تمرین عملی با هماهنگی در گروه تلگرامی درس اعلام خواهد شد.
 \end{itemize}
 \end{flushright}
 
@@ -188,12 +189,12 @@
     \item از پیاده‌سازی آماده کتابخانه‌ها \textbf{جلوگیری} شود.
     \item در پیاده‌سازی های خود از داده ساختار های آموخته شده(لیست پیوندی، صف، پشته و...) استفاده کنید.
     \item  فایل های \lr{template} کلاس ها در لینک گیت هاب زیر موجود است.(به نوع خروجی های توابع دقت شود)
-    \item \href{https://github.com/arshi8294/DSA-UMZ-Fall_1404}{لینک گیت‌هاب}
+    \item \href{https://github.com/arshi8294/DSA-UMZ-Fall_1404/tree/master/practicalAssignments/Assignment1}{لینک گیت‌هاب}
 \end{itemize}
 \end{flushright}
 
 
-\vspace*{8\baselineskip}
+\vspace*{15\baselineskip}
 
 \begin{center}
 {\large \textbf{موفق باشید}}
@@ -222,7 +223,7 @@
     \item \lr{\textbf{forward(steps)}}: کاربر \lr{steps} قدم به جلو می‌رود. اگر فقط \lr{x} قدم در تاریخچه قابل حرکت به جلو باشد و \lr{steps > x}، آنگاه فقط \lr{x} قدم به جلو می‌رود. آدرس صفحه‌ی جاری پس از حرکت به جلو را برگردانید.\\
 \end{enumerate}
 
-*دقت شود که مانند مرورگر های واقعی در صورت \lr{visit} تاریخچه فرواردها پاک می‌شود.
+*دقت شود که مانند مرورگر های واقعی در صورت \lr{visit}جدید تاریخچه فرواردها پاک می‌شود. 
 
 \vspace*{0.5\baselineskip}
 \textbf{ورودی:}\\
@@ -258,14 +259,17 @@
 \vspace*{0.5\baselineskip}
 \textbf{ورودی:}\\
 \begin{flushleft}
-    \lr{students = [1,1,0,0], sandwiches = [0,1,0,1]}
+    \lr{students = [1,1,0,0], sandwiches = [0,1,0,1]}\\
+    \lr{students = [1,1,1,0,0,1], sandwiches = [1,0,0,0,1,1]}
     
 \end{flushleft}
 \vspace*{0.5\baselineskip}
 \textbf{خروجی:}\\
 \begin{flushleft}
-    \lr{0}
+    \lr{0}\\
+    \lr{3}
 \end{flushleft}
+* دقت شود در مثال های بالا پشته پیاده سازی نشده و در واقع ایندکس 0 ام لیست ساندویچ ها بالای پشته است.
 
 \vspace*{1\baselineskip}
 
@@ -292,7 +296,9 @@
     \item برای روز اول (دمای 73)، روز بعد گرم‌تر است (74) \(\leftarrow\) 1 روز صبر کنید.\\
     \item    برای روز سوم (دمای 75)، 4 روز بعد به دمای 76 می‌رسید \(\leftarrow\) 4 روز صبر کنید.
 \end{itemize}
-* در پیاده سازی پاسخ مسئله دقت شود که حداکثر پیچیدگی زمانی \(O(n)\) باشد.
+* در پیاده سازی پاسخ مسئله دقت شود که حداکثر پیچیدگی زمانی \(O(n)\) باشد.\\
+\vspace*{0.5\baselineskip}
+\textbf{راهنمایی:}   از یک پشته برای نگهداری روزها استفاده کنید.
 \end{questions}
 
 \end{document}
